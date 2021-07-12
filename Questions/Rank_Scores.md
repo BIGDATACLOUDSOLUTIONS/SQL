@@ -35,6 +35,7 @@ Important Note: For MySQL solutions, to escape reserved words used as column nam
 ## Solution
 
 ```text
+select * from (select score, dense_rank() over(order by score desc) as Rank from Scores) order by Rank;
 
 ```
 
