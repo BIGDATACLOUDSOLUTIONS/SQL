@@ -39,5 +39,14 @@ Result table:
 1 is the only number that appears consecutively for at least three times.
 
 ```
-
+<--
+SELECT distinct num as ConsecutiveNums
+from
+(SELECT NUM,(CASE WHEN NUM = LEAD(NUM,1) OVER (ORDER BY ID) 
+           AND NUM = LEAD(NUM,2) OVER (ORDER BY ID) THEN 'Y'
+        ELSE 'N'
+        END) AS Consecutiveind
+FROM LOGS)
+WHERE Consecutiveind = 'Y'
+-->>
 
