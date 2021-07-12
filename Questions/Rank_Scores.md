@@ -34,6 +34,15 @@ Important Note: For MySQL solutions, to escape reserved words used as column nam
 <!--
 ## Solution
 
+Create table If Not Exists Scores (Id int, Score DECIMAL(3,2))
+Truncate table Scores
+insert into Scores (Id, Score) values ('1', '3.5')
+insert into Scores (Id, Score) values ('2', '3.65')
+insert into Scores (Id, Score) values ('3', '4.0')
+insert into Scores (Id, Score) values ('4', '3.85')
+insert into Scores (Id, Score) values ('5', '4.0')
+insert into Scores (Id, Score) values ('6', '3.65')
+
 ```text
 select * from (select score, dense_rank() over(order by score desc) as Rank from Scores) order by Rank;
 
