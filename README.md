@@ -1,2 +1,2 @@
 # SQL
-1. [Rank Scores](Questions/)
+1. [Rank Scores](Questions/Rank_Scores.md)
