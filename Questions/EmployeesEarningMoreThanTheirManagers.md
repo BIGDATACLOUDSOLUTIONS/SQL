@@ -22,7 +22,8 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 ```
 <!--
 ```text
-
+select e.name as Employee from Employee e inner join Employee m on e.ManagerId=m.id
+where e.salary>m.salary;
 
 ```
 
