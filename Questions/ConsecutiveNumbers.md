@@ -43,6 +43,17 @@ Result table:
 <!--
 ## Solution
 ```text
+Create table If Not Exists Person (Id int, Email varchar(255))
+Truncate table Person
+insert into Person (Id, Email) values ('1', 'a@b.com')
+insert into Person (Id, Email) values ('2', 'c@d.com')
+insert into Person (Id, Email) values ('3', 'a@b.com')
+insert into Employee (Id, Name, Salary, ManagerId) values ('4', 'Max', '90000', 'None')
+insert into Logs (Id, Num) values ('5', '1')
+insert into Logs (Id, Num) values ('6', '2')
+insert into Logs (Id, Num) values ('7', '2')
+
+
 SELECT distinct num as ConsecutiveNums
 from
 (SELECT NUM,(CASE WHEN NUM = LEAD(NUM,1) OVER (ORDER BY ID) 
