@@ -21,7 +21,15 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 +----------+
 ```
 <!--
-```text
+```
+Create table If Not Exists Person (Id int, Email varchar(255))
+Truncate table Person
+insert into Person (Id, Email) values ('1', 'a@b.com')
+insert into Person (Id, Email) values ('2', 'c@d.com')
+insert into Person (Id, Email) values ('3', 'a@b.com')
+insert into Employee (Id, Name, Salary, ManagerId) values ('4', 'Max', '90000', 'None')
+
+
 select e.name as Employee from Employee e inner join Employee m on e.ManagerId=m.id
 where e.salary>m.salary;
 
